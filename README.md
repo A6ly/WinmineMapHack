@@ -1,2 +1,2 @@
 # WinmineMapHack
-![winminemaphack](https://user-images.githubusercontent.com/32415358/48204947-74e85d00-e3ae-11e8-97ba-cab2efaca509.PNG)
+![winminemaphack](https://user-images.githubusercontent.com/32415358/52355860-7e00cd00-2a76-11e9-9511-4b8ca0ff4282.PNG)
