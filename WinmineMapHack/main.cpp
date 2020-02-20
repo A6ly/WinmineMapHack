@@ -10,7 +10,7 @@
 
 typedef struct {
 	BYTE MaxWidthX;
-	BYTE MaXHeightY;
+	BYTE MaxHeightY;
 	BYTE ALLMineCount;
 }GameInfo;
 
@@ -56,7 +56,7 @@ DWORD GetPID(LPCSTR gamename) {   // 지뢰찾기 프로세스의 PID를 얻는 함수
 
 void ReadMapInfo(HANDLE handle, GameInfo *MapInfo) {   // MapInfo의 메모리를 읽어주는 함수
 	ReadProcessMemory(handle, (LPCVOID)ADR_WIDTH_X, &MapInfo->MaxWidthX, 4, NULL);
-	ReadProcessMemory(handle, (LPCVOID)ADR_HEIGHT_Y, &MapInfo->MaXHeightY, 4, NULL);
+	ReadProcessMemory(handle, (LPCVOID)ADR_HEIGHT_Y, &MapInfo->MaxHeightY, 4, NULL);
 	ReadProcessMemory(handle, (LPCVOID)ADR_MINE_ALL_COUNT, &MapInfo->ALLMineCount, 4, NULL);
 }
 
@@ -88,7 +88,7 @@ void Hack(const BYTE *Map, const GameInfo MapInfo) {   // 반복문을 통해 맵정보를
 		}
 		else { continue; }
 
-		if (count == MapInfo.MaxWidthX * MapInfo.MaXHeightY) {   // count가 맵의 넓이와 같아진다면 break
+		if (count == MapInfo.MaxWidthX * MapInfo.MaxHeightY) {   // count가 맵의 넓이와 같아진다면 break
 			break;
 		}
 	}
